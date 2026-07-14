@@ -1,0 +1,343 @@
+/* ===========================
+   ESTILOS GENERALES
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#63b3ff,#ffffff);
+    color:#111;
+}
+
+/*============================
+MENÚ
+=============================*/
+
+header{
+    width:100%;
+    padding:20px 10%;
+    position:fixed;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:white;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#ffe600;
+}
+
+/*============================
+HERO
+=============================*/
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:120px 10%;
+}
+
+.hero-text{
+    width:50%;
+}
+
+.hero-text h1{
+    font-size:70px;
+    color:#fff;
+    line-height:80px;
+}
+
+.hero-text span{
+    color:#0047AB;
+}
+
+.hero-text p{
+    margin:25px 0;
+    font-size:18px;
+    color:#fff;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 40px;
+    background:#d90429;
+    color:white;
+    border-radius:40px;
+    text-decoration:none;
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    background:#001d5b;
+}
+
+.hero-image{
+    width:40%;
+    text-align:center;
+}
+
+.hero-image img{
+    width:100%;
+    animation:flotar 4s infinite ease-in-out;
+}
+
+/*============================
+HISTORIA
+=============================*/
+
+.historia{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.historia h2{
+    font-size:45px;
+    margin-bottom:20px;
+    color:#003087;
+}
+
+.historia p{
+    font-size:18px;
+    max-width:800px;
+    margin:auto;
+}
+
+/*============================
+JUGADORES
+=============================*/
+
+.jugadores{
+    padding:100px 10%;
+}
+
+.jugadores h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:45px;
+    color:#003087;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:20px;
+}
+
+.card p{
+    margin:0 20px 25px;
+}
+
+/*============================
+GALERÍA
+=============================*/
+
+.galeria{
+    padding:100px 10%;
+}
+
+.galeria h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:45px;
+    color:#003087;
+}
+
+.imagenes{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.imagenes img{
+    width:100%;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.imagenes img:hover{
+    transform:scale(1.05);
+}
+
+/*============================
+FOOTER
+=============================*/
+
+footer{
+    padding:50px;
+    background:#002868;
+    color:white;
+    text-align:center;
+}
+
+.redes{
+    margin-top:20px;
+}
+
+.redes i{
+    font-size:28px;
+    margin:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.redes i:hover{
+    color:#6ec1ff;
+}
+
+/*============================
+ANIMACIÓN
+=============================*/
+
+@keyframes flotar{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/*============================
+RESPONSIVE
+=============================*/
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text,
+.hero-image{
+width:100%;
+}
+
+.hero-text h1{
+font-size:45px;
+line-height:55px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.imagenes{
+grid-template-columns:1fr;
+}
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:15px;
+}
+
+}
+
+/* Animaciones */
+
+.historia,
+.card,
+.galeria{
+
+opacity:0;
+transform:translateY(60px);
+transition:.8s;
+
+}
+
+.mostrar{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+.activo{
+
+color:#ffe600 !important;
+
+}
+
+#subir{
+
+position:fixed;
+bottom:30px;
+right:30px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#d90429;
+color:white;
+font-size:22px;
+cursor:pointer;
+display:none;
+box-shadow:0 10px 20px rgba(0,0,0,.3);
+transition:.3s;
+
+}
+
+#subir:hover{
+
+transform:scale(1.1);
+
+}
